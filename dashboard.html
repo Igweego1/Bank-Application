@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trib Dashboard</title>
+    <link href="./styles/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body class="dashboard">
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 order-2 order-md-1 p-5">
+                <div class="d-flex justify-content-between">
+                  <h1 class="fs-3 fw-medium">Good morning, <span id="username"></span></h1>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    View Profile
+                  </button>
+                  
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                      <img class="rounded-circle profile mx-auto d-block" 
+                      src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80"
+                      />
+                    </div>
+                    <div class="offcanvas-body" id="userDetails">
+                      
+                    </div>
+                  </div>
+                </div>
+                <h5 class="mt-5">Account balance</h5>
+                <div class="card h-25">
+                    <div class="card-body">
+                        <h5 class="card-title">Current account</h5>
+                        <div class="d-flex balance">
+                          <p class="card-text fs-2">N</p>
+                          <p class="card-text fs-2" id="balance">5600</p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <hr class="mt-5"/>
+
+                <h5 class="mt-5">Transactions</h5>
+                <table class="table table-borderless shadow-sm" id="transactionTable">
+                    <thead>
+                        <tr>
+                            <td>Type</td>
+                            <td>Date</td>
+                            <td>Details</td>
+                            <td>Amount</td>
+                            <td>Balance</td>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionBody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-2 order-1 order-md-2 side py-5">
+                <div class="d-flex flex-row flex-md-column gap-5">
+                    <button type="button" class="col btn sidebtn rounded-0 text-white fw-medium" data-bs-toggle="modal" data-bs-target="#exampleModal">Withdraw</button>
+                    <button type="button" class="col btn sidebtn rounded-0 text-white fw-medium" data-bs-toggle="modal" data-bs-target="#exampleModal2">Deposit</button>
+                    <button type="button" class="col btn sidebtn rounded-0 text-white fw-medium" id="logout">Logout</button>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Withdraw amount</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <input type="number" id="withdraw" class="form-control mb-3" placeholder="Enter amount to withdraw"/>
+                      <input type="text" id="descriptionWithdraw" class="form-control" placeholder="Enter description"/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="confirmWithdraw">Confirm</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Deposit amount</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <input type="number" id="deposit" class="form-control mb-3" placeholder="Enter amount to deposit"/>
+                      <input type="text" id="descriptionDeposit" class="form-control" placeholder="Enter description"/>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="confirmDeposit">Confirm</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./scripts/dashboard.js"></script>
+</body>
+</html>
