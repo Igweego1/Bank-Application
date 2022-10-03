@@ -1,0 +1,52 @@
+.bg-main {
+    background-color: #FAFBFD;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder{
+    font-size: 14px;
+}
+
+body.dashboard {
+    background-color: #FAFBFD;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.row {
+    height: 100vh;
+}
+
+.side {
+    background-color: #2366B5;
+}
+
+.profile {
+    width: 80px;
+    height: 80px;
+}
+
+.balance {
+    color: #2366B5;
+}
+
+hr {
+    background-color: #CCC7C7;
+}
+
+thead {
+    background-color: #2366B5;
+    color: #ffffff;
+}
+
+.sidebtn:hover {
+    background-color: #ffffff;
+    color: black !important;
+}
+
+/* tbody tr td:nth-child(1) {
+    opacity: 60%;
+} */
