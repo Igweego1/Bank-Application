@@ -16,10 +16,6 @@ body.dashboard {
     font-family: 'Montserrat', sans-serif;
 }
 
-.row {
-    height: 100vh;
-}
-
 .side {
     background-color: #2366B5;
 }
