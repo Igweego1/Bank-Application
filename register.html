@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an account</title>
+    <link href="./index.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body class="bg-main">
+    <main class="container-fluid">
+        <form class="form-control bg-white w-50 flex-column mx-auto my-4 text-center gap-3 border-0 shadow-sm border-2 p-5">
+            <h3 class="fw-normal">Create an account</h3>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-floating">
+                        <input id="firstName" type="text" class="form-control inputs" placeholder="Firstname">
+                        <label for="floatingInput">Firstname</label>
+                    </div>
+                    <div class="form-floating">
+                        <input id="email" type="email" class="form-control inputs" placeholder="Email">
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="mt-4">
+                        <select class="form-select inputs" id="gender">
+                            <option selected>Gender</option>
+                            <option value="male">Male</option>
+                            <option  value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-floating">
+                        <input id="nextOfKin" type="text" class="form-control inputs" placeholder="Next of Kin">
+                        <label for="floatingInput">Next Of Kin</label>
+                    </div>
+                    <div  class=" form-floating">
+                        <input id="password" type="password" class="form-control inputs" placeholder="Password">
+                        <label for="floatingInput">Password</label>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-floating">
+                        <input id="lastName" type="text" class="form-control inputs" placeholder="Lastname">
+                        <label for="floatingInput">Last name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input id="phoneNo" type="text" class="form-control inputs" placeholder="Phone number">
+                        <label for="floatingInput">Phone number</label>
+                    </div>
+                    <div class="form-floating mt-1">
+                        <input id="dob" type="date" class="form-control inputs" placeholder="Date Of Birth">
+                        <!-- <label for="floatingInput">Date Of Birth</label> -->
+                    </div>
+                    <div class="form-floating">
+                        <input id="initialDeposit" type="number" class="form-control inputs" placeholder="Initial Deposit">
+                        <label for="floatingInput">Initial Deposit</label>
+                    </div>
+                    <div  class=" form-floating">
+                        <input id="confirmPassword" type="password" class="form-control inputs" placeholder="Password">
+                        <label for="floatingInput">Confirm Password</label>
+                    </div>
+                </div>
+                <button id="submit" type="button" class="btn btn-primary">Sign Up</button>
+            </div>
+        </form>
+    </main>
+    <script src="./scripts/register.js"></script>
+</body>
+</html>
