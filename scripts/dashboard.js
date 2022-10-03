@@ -102,7 +102,10 @@ const updateTransactions = (transactionType) => {
             if(balance >= withdraw){
                 balance -= withdraw;
             }
-            else alert('insufficient funds')
+            else {
+                alert('insufficient funds');
+                return;
+            }
         }
 
         allUsers[find].initialDeposit = balance;
