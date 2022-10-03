@@ -9,12 +9,26 @@ const loggedInUserDetails = allUsers.find(obj => {
 
 let sidebar = document.getElementById('userDetails');
 sidebar.innerHTML = 
-    `<h4>${loggedInUserDetails.firstName} ${loggedInUserDetails.lastName}</h4>
-    <h6>Email: ${loggedInUserDetails.email}</h6>
-    <h6>Phone number: ${loggedInUserDetails.phoneNo}</h6>
-    <h6>Next of kin: ${loggedInUserDetails.nextOfKin}</h6>
-    <h6>Date of birth: ${loggedInUserDetails.dob}</h6>
     `
+        <h4>${loggedInUserDetails.firstName} ${loggedInUserDetails.lastName}</h4>
+        <div>
+            <small>Email</small>
+            <h6>${loggedInUserDetails.email}</h6>
+        </div>
+        <div>
+            <small>Phone number</small>
+            <h6>${loggedInUserDetails.phoneNo}</h6>
+        </div>
+        <div>
+            <small>Date of birth</small>
+            <h6>${loggedInUserDetails.dob}</h6>
+        </div>
+        <div>
+            <small>Next of kin</small>
+            <h6>${loggedInUserDetails.nextOfKin}</h6>
+        </div>
+    `
+
 
 const confirmWithdraw = document.getElementById('confirmWithdraw');
 const confirmDeposit = document.getElementById('confirmDeposit');
