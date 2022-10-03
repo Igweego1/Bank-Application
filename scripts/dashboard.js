@@ -53,6 +53,23 @@ const getDate = () => {
     return `${fullDate}, ${hours % 12 || 12}:${minutes} ${time}`;
 }
 
+const greetings = () => {
+    const date = new Date();
+    const hours = date.getHours();
+    let greeting = '';
+    if(hours >= 0 && hours < 12){
+        greeting = 'morning'
+    }
+    else if (hours >= 12 && hours <= 17){
+        greeting = 'afternoon'
+    }
+    else greeting = 'evening'
+
+    return greeting
+}
+
+document.getElementById('greetings').innerHTML = greetings();
+
 let allTransactions = JSON.parse(localStorage.getItem('allTransactions')) ? JSON.parse(localStorage.getItem('allTransactions')) : [];
 let transactionsWithoutEmail = [];
 let loggedInUserTransactions = allTransactions.filter(x => x.userEmail === loggedInUserDetails.email);
