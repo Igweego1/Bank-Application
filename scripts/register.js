@@ -19,7 +19,8 @@ submit.addEventListener('click', (e) => {
     let confirmPassword = document.getElementById('confirmPassword').value;
 
     if(password !== confirmPassword){
-        alert('Passwords do not match')
+        alert('Passwords do not match');
+        return;
     }
 
     const signUpData = {
